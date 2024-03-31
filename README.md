@@ -1,4 +1,4 @@
-https://dfdxalex.github.io/notebookForReact/
+https://dfdxalex.github.io/notebook_react/
 
 
 # Getting Started with Create React App
