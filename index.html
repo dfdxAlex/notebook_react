@@ -10,7 +10,7 @@
         // Асинхронная функция для загрузки файла манифеста
         async function loadManifest() {
             try {
-                const response = await fetch('https://github.com/dfdxAlex/notebook_react/blob/main/build/asset-manifest.json'); // Путь к вашему файлу манифеста
+                const response = await fetch('build/asset-manifest.json'); // Путь к вашему файлу манифеста
                 const manifest = await response.json(); // Преобразование ответа в объект JavaScript
                 console.log('Manifest loaded:', manifest);
 
