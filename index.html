@@ -12,20 +12,18 @@
             try {
                 const response = await fetch('build/asset-manifest.json'); // Путь к вашему файлу манифеста
                 const manifest = await response.json(); // Преобразование ответа в объект JavaScript
-                console.log('Manifest loaded:', manifest);
 
-                // Далее вы можете использовать содержимое манифеста для подключения нужных файлов
+                // найти расположение js файла
                 const mainJs = document.createElement('script');
-                console.log(manifest['files']['main.js']);
                 mainJs.src = 'build'+manifest['files']['main.js'];
                 document.head.appendChild(mainJs);
 
+                // найти расположение CSS файла
                 const mainCss = document.createElement('link');
                 mainCss.rel = 'stylesheet';
                 mainCss.href = 'build'+manifest['files']['main.css'];
                 document.head.appendChild(mainCss);
 
-                // И так далее...
 
             } catch (error) {
                 console.error('Error loading manifest:', error);
