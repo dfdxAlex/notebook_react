@@ -1,0 +1,15 @@
+.hamburger 
+{
+    height: 1.4em;
+    width: 1.4em;
+    border: 1px solid black;
+    padding: 0.1em;
+    border-radius: 20%;
+}
+
+.hamburger-hr 
+{
+    border-width: calc(1/8em);
+    margin: 0px;
+    margin-top: 0.17em;
+}

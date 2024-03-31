@@ -1,9 +1,10 @@
 import './App.css';
+import MenuWork from './vievs/MenuWork.js';
 
 function App() {
   return (
      <div>
-        <h1>Re zdfvdf</h1>
+        <MenuWork />
      </div>
   );
 }
