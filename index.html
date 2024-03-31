@@ -2,11 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; URL=./build/index.html">
+    <title>My App</title>
 </head>
 <body>
+    <script>
+        // Асинхронная функция для загрузки файла манифеста
+        async function loadManifest() {
+            try {
+                const response = await fetch('build/asset-manifest.json'); // Путь к вашему файлу манифеста
+                const manifest = await response.json(); // Преобразование ответа в объект JavaScript
+                console.log('Manifest loaded:', manifest);
+
+                // Далее вы можете использовать содержимое манифеста для подключения нужных файлов
+                const mainJs = document.createElement('script');
+                console.log(manifest['files']['main.js']);
+                mainJs.src = 'build'+manifest['files']['main.js'];
+                document.head.appendChild(mainJs);
+
+                const mainCss = document.createElement('link');
+                mainCss.rel = 'stylesheet';
+                mainCss.href = 'build'+manifest['files']['main.css'];
+                document.head.appendChild(mainCss);
+
+                // И так далее...
+
+            } catch (error) {
+                console.error('Error loading manifest:', error);
+            }
+        }
+
+        // Вызов функции загрузки манифеста при загрузке страницы
+        window.addEventListener('DOMContentLoaded', loadManifest);
+    </script>
+
+    <div id="root"></div>
 </body>
 </html>
