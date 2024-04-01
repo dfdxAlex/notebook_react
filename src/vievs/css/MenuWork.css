@@ -2,7 +2,7 @@
     padding-top: 5px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 1.4em;
+    grid-auto-rows: 1.7em;
     grid-gap: 0.5em;
     grid-row-gap: 0.3em; /*Отступ между строками*/
     grid-auto-flow: row; /* Это заставит элементы переноситься вниз при нехватке места */
