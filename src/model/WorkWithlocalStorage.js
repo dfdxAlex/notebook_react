@@ -5,7 +5,7 @@ import OutputPoleBook from '../vievs/OutputPoleBook.js';
 // -- категория
 // -- дата появления
 // -- дата удаления
-// -- признак удаления (удалена информация или нет)
+// -- признак удаления (удалена информация или нет) True - информация не удалена
 // -- перспектива расширения
 // -- перспектива расширения
 function WorkWithlocalStorage(props)
@@ -31,12 +31,15 @@ function WorkWithlocalStorage(props)
                 dataSee = props.dataSee;
             if (props.dataDel !== '') 
                 dataDel = props.dataDel;
-            if (props.infoDelOrSee !== true) 
-                infoDelOrSee = false;
+            if (props.infoDelOrSee !== false 
+                && props.infoDelOrSee !== null 
+                  && props.infoDelOrSee !== undefined) 
+                infoDelOrSee = true;
             if (props.dataCircle !== false) 
                 dataCircle = true;
             if (props.dataReserv2 !== '') 
                 dataReserv2 = props.dataReserv2;
+
             saveDataInfo([info,category,dataSee,dataDel,infoDelOrSee,dataCircle,dataReserv2]);
         }
     return <OutputPoleBook />

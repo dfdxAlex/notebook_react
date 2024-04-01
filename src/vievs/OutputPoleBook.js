@@ -1,5 +1,7 @@
 
+import DellPosition from '../model/DellPosition.js';
 import {workArray} from '../model/WorkDataArray.js';
+
 import './css/OutputPoleBook.css';
 
 function OutputPoleBook()
@@ -7,6 +9,7 @@ function OutputPoleBook()
     return <div>
                <ul>
                    {workArray.map((item, index) => {
+                      if (item[4]) {
                         return ( 
                                <div className="ul-div" 
                                     key={index}
@@ -15,7 +18,7 @@ function OutputPoleBook()
                                        <button
                                            type="button"
                                            className='poleinfo--button'
-                                           id={index}
+                                           onClick={() => DellPosition(index)}
                                        >
                                            X
                                        </button>
@@ -28,6 +31,7 @@ function OutputPoleBook()
                                    </div>           
                                </div>
                                )
+                        }
                    })}
                </ul>
            </div>;
