@@ -1,6 +1,4 @@
-import '../default.css';
 import './css/Hamburger.css';
-
 
 function Hamburger()
 {

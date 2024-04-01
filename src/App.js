@@ -1,3 +1,4 @@
+import './default.css';
 import './App.css';
 import MenuWork from './vievs/MenuWork.js';
 

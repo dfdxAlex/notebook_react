@@ -3,13 +3,14 @@
     height: 1.4em;
     width: 1.4em;
     border: 1px solid black;
-    padding: 0.1em;
+    padding: 0px;
     border-radius: 20%;
 }
 
 .hamburger-hr 
 {
-    border-width: calc(1/8em);
+    border-width: 2px;
     margin: 0px;
-    margin-top: 0.17em;
+    padding: 0px;
+    margin-top: 0.23em;
 }
