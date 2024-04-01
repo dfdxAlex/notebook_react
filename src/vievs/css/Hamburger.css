@@ -14,3 +14,16 @@
     padding: 0px;
     margin-top: 0.23em;
 }
+
+@media screen and (max-width: 600px) {
+    /* CSS стили для экранов с шириной менее 600px */
+    .hamburger 
+    {
+        height: 1.4em;
+        width: 100%;
+        border: 2px solid black;
+        padding: 0px;
+        border-radius: 10%;
+    }
+    
+  }
