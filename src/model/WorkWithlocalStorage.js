@@ -1,5 +1,5 @@
 import {initArray, saveDataInfo} from "./WorkDataArray.js";
-
+import OutputPoleBook from '../vievs/OutputPoleBook.js';
 // Расшифровка элементов массива
 // -- непосредственно информация
 // -- категория
@@ -11,7 +11,8 @@ import {initArray, saveDataInfo} from "./WorkDataArray.js";
 function WorkWithlocalStorage(props)
 {
     // инициализация массива с данными
-    console.log(initArray());
+    // console.log(initArray());
+    initArray();
 
     let info = '';            // Сама информация
     let category = '';        // Категория
@@ -38,7 +39,7 @@ function WorkWithlocalStorage(props)
                 dataReserv2 = props.dataReserv2;
             saveDataInfo([info,category,dataSee,dataDel,infoDelOrSee,dataCircle,dataReserv2]);
         }
-        return null;
+    return <OutputPoleBook />
 }
 
 

@@ -7,8 +7,8 @@ function App() {
 
   return (
      <div>
-        <WorkWithlocalStorage info="hello"/>
         <MenuWork />
+        <WorkWithlocalStorage info=""/>
      </div>
   );
 }

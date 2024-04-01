@@ -1,0 +1,34 @@
+.ul-div {
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.poleinfo-div--button {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 1em;
+    line-height: 1em;
+}
+
+.poleinfo--button {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    float: left;
+    background-color: rgb(152, 54, 54);
+}
+
+.poleinfo-div--li {
+    display: inline;
+    list-style-type: none;
+    height: 1em;
+}
+
+.poleinfo-li {
+    display: inline;
+    font-size: 1em;
+    line-height: 1em;
+    height: 100%;
+}
