@@ -1,14 +1,17 @@
 
 import DellPosition from '../model/DellPosition.js';
 import {workArray} from '../model/WorkDataArray.js';
+import React, { useState } from 'react';
 
 import './css/OutputPoleBook.css';
 
 function OutputPoleBook()
 {
+    const [clonWorkArray, setWorkArray] = useState(workArray);
+    
     return <div>
                <ul>
-                   {workArray.map((item, index) => {
+                   {clonWorkArray.map((item, index) => {
                       if (item[4]) {
                         return ( 
                                <div className="ul-div" 
@@ -18,7 +21,7 @@ function OutputPoleBook()
                                        <button
                                            type="button"
                                            className='poleinfo--button'
-                                           onClick={() => DellPosition(index)}
+                                           onClick={() => DellPosition(index, setWorkArray)}
                                        >
                                            X
                                        </button>

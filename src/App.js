@@ -8,7 +8,7 @@ function App() {
   return (
      <div>
         <MenuWork />
-        <WorkWithlocalStorage info=""/>
+        <WorkWithlocalStorage info="ytfvhghg"/>
      </div>
   );
 }

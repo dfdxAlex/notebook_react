@@ -36,7 +36,8 @@ function saveDataInfo(dataInfo)
     if (dataInfo)
         workArray.push(dataInfo);
     const newData =  JSON.stringify(workArray);
-    localStorage.setItem('DataForNoteBook',newData)
+    localStorage.setItem('DataForNoteBook',newData);
+    return workArray;
 }
 
 export {workArray, initArray, saveDataInfo};
