@@ -1,5 +1,5 @@
 
-import DellPosition from '../model/DellPosition.js';
+import hundlerDellPosition from '../controller/hundlerDellPosition.js';
 import {workArray} from '../model/WorkDataArray.js';
 import React, { useState } from 'react';
 
@@ -21,7 +21,7 @@ function OutputPoleBook()
                                        <button
                                            type="button"
                                            className='poleinfo--button'
-                                           onClick={() => DellPosition(index, setWorkArray)}
+                                           onClick={() => hundlerDellPosition(index, setWorkArray)}
                                        >
                                            X
                                        </button>
