@@ -1,5 +1,6 @@
-import {initArray, saveDataInfo} from "./WorkDataArray.js";
+import saveString from "./saveString.js";
 import OutputPoleBook from '../vievs/OutputPoleBook.js';
+
 // Расшифровка элементов массива
 // -- непосредственно информация
 // -- категория
@@ -10,39 +11,17 @@ import OutputPoleBook from '../vievs/OutputPoleBook.js';
 // -- перспектива расширения
 function WorkWithlocalStorage(props)
 {
-    // инициализация массива с данными
-    // console.log(initArray());
-    initArray();
 
-    let info = '';            // Сама информация
-    let category = '';        // Категория
-    let dataSee = '';         // Дата для показа информации
-    let dataDel = '';         // Дата для удаления информации
-    let infoDelOrSee = true;  // True - информация не удалена
-    let dataCircle = false;   // Информация появляется каждый день true-Да, 0-нет
-    let dataReserv2 = '';     // данные для расширения
+    // переменные состояния, проходят транзитом в OutputPoleBook
+    let clonWorkArray = props.clonWorkArray;
+    let setWorkArray = props.setWorkArray;
 
-    if (props && props.info !== '' && props.info !== null && props.info!==undefined) 
-        {
-            info = props.info;
-            if (props.category !== '') 
-                category = props.category;
-            if (props.dataSee !== '') 
-                dataSee = props.dataSee;
-            if (props.dataDel !== '') 
-                dataDel = props.dataDel;
-            if (props.infoDelOrSee !== false 
-                && props.infoDelOrSee !== null 
-                  && props.infoDelOrSee !== undefined) 
-                infoDelOrSee = true;
-            if (props.dataCircle !== false) 
-                dataCircle = true;
-            if (props.dataReserv2 !== '') 
-                dataReserv2 = props.dataReserv2;
+    saveString(props);
 
-            saveDataInfo([info,category,dataSee,dataDel,infoDelOrSee,dataCircle,dataReserv2]);
-        }
-    return <OutputPoleBook />
+    return <OutputPoleBook 
+               clonWorkArray={clonWorkArray}
+               setWorkArray={setWorkArray}
+           />
 }
 
 

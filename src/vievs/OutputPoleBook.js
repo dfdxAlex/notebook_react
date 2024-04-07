@@ -1,14 +1,13 @@
 
 import hundlerDellPosition from '../controller/hundlerDellPosition.js';
-import {workArray} from '../model/WorkDataArray.js';
-import React, { useState } from 'react';
 
 import './css/OutputPoleBook.css';
 
-function OutputPoleBook()
+function OutputPoleBook(props)
 {
-    const [clonWorkArray, setWorkArray] = useState(workArray);
-    
+    let clonWorkArray = props.clonWorkArray;
+    const setWorkArray = props.setWorkArray;
+
     return <div>
                <ul>
                    {clonWorkArray.map((item, index) => {
