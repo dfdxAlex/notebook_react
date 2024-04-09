@@ -1,3 +1,4 @@
+import saveString from "./saveString.js";
 import OutputPoleBook from '../vievs/OutputPoleBook.js';
 
 // Расшифровка элементов массива
@@ -10,10 +11,19 @@ import OutputPoleBook from '../vievs/OutputPoleBook.js';
 // -- перспектива расширения
 function WorkWithlocalStorage(props)
 {
+
+    // переменные состояния, проходят транзитом в OutputPoleBook
+    let clonWorkArray = props.clonWorkArray;
+    let setWorkArray = props.setWorkArray;
+
+    saveString(props);
+    // console.log(props);
+
     return <OutputPoleBook 
-               clonWorkArray={props.clonWorkArray}
-               setWorkArray={props.setWorkArray}
+               clonWorkArray={clonWorkArray}
+               setWorkArray={setWorkArray}
            />
 }
+
 
 export default WorkWithlocalStorage;

@@ -33,12 +33,17 @@ function initArray()
 //массива без добавления элементов.
 function saveDataInfo(dataInfo)
 {
-    if (dataInfo) 
-        workArray.push(dataInfo);
+    let copyWorkArray = workArray;
 
-    const newData =  JSON.stringify(workArray);
+    if (dataInfo) 
+        copyWorkArray.push(dataInfo);
+
+    const newData =  JSON.stringify(copyWorkArray);
     localStorage.setItem('DataForNoteBook',newData);
-    return workArray;
+    
+    workArray = copyWorkArray;
+
+    return copyWorkArray;
 }
 
 export {workArray, initArray, saveDataInfo};
