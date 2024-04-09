@@ -33,8 +33,9 @@ function initArray()
 //массива без добавления элементов.
 function saveDataInfo(dataInfo)
 {
-    if (dataInfo)
+    if (dataInfo) 
         workArray.push(dataInfo);
+
     const newData =  JSON.stringify(workArray);
     localStorage.setItem('DataForNoteBook',newData);
     return workArray;

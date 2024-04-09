@@ -1,5 +1,9 @@
 import {saveDataInfo} from "./WorkDataArray.js";
 
+// функция проверяет входные данные и если нужно, то 
+// записывает их в массив и возвращает массив.
+// если данных для добавления нет, то функция просто
+// возвращает текущий массив.
 function saveString(props)
 {
     let info = '';            // Сама информация
@@ -15,21 +19,29 @@ function saveString(props)
     if (props && props.info !== '' && props.info !== null && props.info!==undefined) 
         {
             info = props.info;
-            if (props.category !== '') 
+            if (props.category !== '') {
                 category = props.category;
-            if (props.dataSee !== '') 
+            }
+            if (props.dataSee !== '') {
                 dataSee = props.dataSee;
-            if (props.dataDel !== '') 
+            }
+            if (props.dataDel !== '') {
                 dataDel = props.dataDel;
+            }
             if (props.infoDelOrSee !== false 
                 && props.infoDelOrSee !== null 
-                  && props.infoDelOrSee !== undefined) 
-                infoDelOrSee = true;
-            if (props.dataCircle !== false) 
+                  && props.infoDelOrSee !== undefined) {
+                    infoDelOrSee = true;
+                  }
+            if (props.dataCircle !== false) {
                 dataCircle = true;
-            if (props.dataReserv2 !== '') 
+            }
+            if (props.dataReserv2 !== '') {
                 dataReserv2 = props.dataReserv2;
+            }
 
+            // непосредственная запись данных в массив и запись массива
+            // в хранилище
             arrayReturn = saveDataInfo([info,category,dataSee,dataDel,infoDelOrSee,dataCircle,dataReserv2]);
         }
         return arrayReturn;

@@ -5,6 +5,10 @@ import hundlerAddPosition from '../controller/hundlerAddPosition.js';
 
 function MenuWork(props)
 {
+    function hundlerInputText(props)
+    {
+        console.log('re re');
+    }
 
     return (<div>
         <form className="grid-container">
@@ -13,6 +17,7 @@ function MenuWork(props)
                     className="text" 
                     type="text" 
                     id="input_text_add_string"
+                    onChange={hundlerInputText}
                 />
             </div>
             <div className="button-container">
