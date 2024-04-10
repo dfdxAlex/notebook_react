@@ -16,7 +16,7 @@ function WorkWithlocalStorage(props)
     let clonWorkArray = props.clonWorkArray;
     let setWorkArray = props.setWorkArray;
 
-    saveString(props);
+    // saveString(props);
     // console.log(props);
 
     return <OutputPoleBook 
