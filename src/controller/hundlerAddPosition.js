@@ -1,11 +1,11 @@
 import saveString from "../model/saveString.js";
 
-function hundlerAddPosition(props)
+function hundlerAddPosition(clonWorkArray, setWorkArray)
 {
     // состояния главного массива
     // приходит состояние из пропса с главного компонента
-    let clonWorkArray = props.clonWorkArray;
-    let setWorkArray = props.setWorkArray;
+    // let clonWorkArray = props.clonWorkArray;
+    // let setWorkArray = props.setWorkArray;
 
     // выбрать текстовое поле для чтения его содержимого
     const inputText = document.getElementById('input_text_add_string');
@@ -14,13 +14,15 @@ function hundlerAddPosition(props)
     let newData = {
         info: inputText.value
     };
+    console.log(newData);
 
     // добавить новые данные в массив и вернуть 
     // новый массив в clonWorkArray
     clonWorkArray = saveString(newData);
+    // console.log(clonWorkArray);
 
     // изменить состояние массива
-    setWorkArray(clonWorkArray);
+    setWorkArray([...clonWorkArray]);
 }
 
 export default hundlerAddPosition;

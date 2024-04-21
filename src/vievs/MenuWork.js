@@ -5,6 +5,9 @@ import hundlerAddPosition from '../controller/hundlerAddPosition.js';
 
 function MenuWork(props)
 {
+    const setWorkArray = props.setWorkArray;
+    const workArray = props.clonWorkArray;
+
     function hundlerInputText(props)
     {
         console.log('re re');
@@ -24,7 +27,7 @@ function MenuWork(props)
                 <button 
                     className="button" 
                     type="button"
-                    onClick={() => {hundlerAddPosition(props)}}
+                    onClick={() => {hundlerAddPosition(workArray, setWorkArray)}}
                 >
                     Добавить
                 </button>
