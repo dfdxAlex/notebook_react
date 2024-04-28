@@ -4,10 +4,7 @@ import MenuWork from './vievs/MenuWork.js';
 import React, { useState } from 'react';
 import {initArray} from "./model/WorkDataArray.js";
 
-import WorkWithlocalStorage from './model/WorkWithlocalStorage.js';
-
-
-
+import OutputPoleBook from './vievs/OutputPoleBook.js';
 
 function App() {
 
@@ -33,7 +30,7 @@ function App() {
             setInputTextPozition = {setInputTextPozition}
         />
         {/* тег работает с локальным хранилищем */}
-        <WorkWithlocalStorage 
+        <OutputPoleBook 
             info=''
             clonWorkArray = {clonWorkArray}
             setWorkArray = {setWorkArray}

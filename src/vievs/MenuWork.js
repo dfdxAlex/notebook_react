@@ -5,11 +5,6 @@ import hundlerAddPosition from '../controller/hundlerAddPosition.js';
 
 function MenuWork(props)
 {
-    // function hundlerInputText(event)
-    // {
-    //     props.setInputTextPozition(event.target.value);
-    // }
-
     return (<div>
         <form className="grid-container">
             <div className="text-container">
@@ -17,7 +12,6 @@ function MenuWork(props)
                     className="text" 
                     type="text" 
                     id="input_text_add_string"
-                    // onChange={hundlerInputText}
                     onChange={(event) => {props.setInputTextPozition(event.target.value)}}
                     value={props.clonInputTextPozition || ''}
                 />
@@ -33,7 +27,6 @@ function MenuWork(props)
             </div>
             <Hamburger />
             <br />
-            
         </form>
     </div>);
 }

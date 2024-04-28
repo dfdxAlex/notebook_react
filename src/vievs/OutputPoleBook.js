@@ -1,12 +1,20 @@
-
 import hundlerDellPosition from '../controller/hundlerDellPosition.js';
 
 import './css/OutputPoleBook.css';
 
+// Расшифровка элементов массива
+// -- непосредственно информация
+// -- категория
+// -- дата появления
+// -- дата удаления
+// -- признак удаления (удалена информация или нет) True - информация не удалена
+// -- перспектива расширения
+// -- перспектива расширения
+
 function OutputPoleBook(props)
 {
-    let clonWorkArray = props.props.clonWorkArray;
-    const setWorkArray = props.props.setWorkArray;
+    let clonWorkArray = props.clonWorkArray;
+    const setWorkArray = props.setWorkArray;
 
     return <div>
                <ul>
@@ -26,7 +34,7 @@ function OutputPoleBook(props)
                                            X
                                        </button>
                                    </div>           
-                                       <li className='poleinfo-div--li poleinfo-li'>
+                                       <li className='poleinfo-li'>
                                             {item[0]}
                                        </li>
                                </div>
