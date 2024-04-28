@@ -12,6 +12,7 @@ import WorkWithlocalStorage from './model/WorkWithlocalStorage.js';
 function App() {
 
   let workArray = initArray();
+  let inputTextPozition = '';
 
   //состояние контролирует главный массив с информацией
   //состояние передается в транзитный компонент WorkWithlocalStorage
@@ -19,12 +20,17 @@ function App() {
   //состояние передается в функцию MenuWork
   const [clonWorkArray, setWorkArray] = useState(workArray);
 
+  //Содержимое поля ввода добавление позиции
+  const [clonInputTextPozition, setInputTextPozition] = useState(inputTextPozition);
+
   return (
      <div>
         {/* тег создает разметку главного меню */}
         <MenuWork 
             clonWorkArray = {clonWorkArray}
             setWorkArray = {setWorkArray}
+            clonInputTextPozition = {clonInputTextPozition}
+            setInputTextPozition = {setInputTextPozition}
         />
         {/* тег работает с локальным хранилищем */}
         <WorkWithlocalStorage 

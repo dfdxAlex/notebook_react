@@ -11,6 +11,7 @@ function OutputPoleBook(props)
     return <div>
                <ul>
                    {clonWorkArray.map((item, index) => {
+                    // item[4] проверяет считается ли запись удаленной
                       if (item[4]) {
                         return ( 
                                <div className="ul-div" 

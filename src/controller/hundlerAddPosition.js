@@ -8,11 +8,13 @@ function hundlerAddPosition(props)
     let setWorkArray = props.setWorkArray;
 
     // выбрать текстовое поле для чтения его содержимого
-    const inputText = document.getElementById('input_text_add_string');
-    
+    // Информация добывается из состояния, которое отслеживает текстовое поле
+    // const inputText = document.getElementById('input_text_add_string');
+    const inputText = props.clonInputTextPozition;
+
     // имитация объекта-пропса, для функции saveString
     let newData = {
-        info: inputText.value
+        info: inputText
     };
 
     // добавить новые данные в массив и вернуть 

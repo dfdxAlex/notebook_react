@@ -5,9 +5,9 @@ import hundlerAddPosition from '../controller/hundlerAddPosition.js';
 
 function MenuWork(props)
 {
-    function hundlerInputText(props)
+    function hundlerInputText(event)
     {
-        console.log('re re');
+        props.setInputTextPozition(event.target.value);
     }
 
     return (<div>
