@@ -18,6 +18,7 @@ function MenuWork(props)
                     type="text" 
                     id="input_text_add_string"
                     onChange={hundlerInputText}
+                    value={props.clonInputTextPozition || ''}
                 />
             </div>
             <div className="button-container">

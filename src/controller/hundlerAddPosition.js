@@ -11,6 +11,8 @@ function hundlerAddPosition(props)
     // Информация добывается из состояния, которое отслеживает текстовое поле
     // const inputText = document.getElementById('input_text_add_string');
     const inputText = props.clonInputTextPozition;
+    // Обнулить состояние переменной после получения информации из неё
+    props.setInputTextPozition('');
 
     // имитация объекта-пропса, для функции saveString
     let newData = {
