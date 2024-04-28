@@ -3,6 +3,7 @@ import './App.css';
 import MenuWork from './vievs/MenuWork.js';
 import React, { useState } from 'react';
 import {initArray} from "./model/WorkDataArray.js";
+import getLang from './controller/getLang.js';
 
 import OutputPoleBook from './vievs/OutputPoleBook.js';
 import Settings from './vievs/Settings.js';
@@ -12,6 +13,7 @@ function App() {
   let workArray = initArray();
   let inputTextPozition = '';
   let typeOfRegim = true;
+  let lang = getLang();
 
   //состояние контролирует главный массив с информацией
   //состояние передается в транзитный компонент WorkWithlocalStorage
@@ -25,6 +27,9 @@ function App() {
   //Состояние определяет показывать ли рабочее поле
   //или поле с настройками
   const [clonTypeOfRegim, setTypeOfRegim] = useState(typeOfRegim);
+
+  //Состояние определяет язык интерфейса
+  const [clonLang, setLang] = useState(lang);
 
   return (
      <div>
