@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import {initArray} from "./model/WorkDataArray.js";
 
 import OutputPoleBook from './vievs/OutputPoleBook.js';
+import Settings from './vievs/Settings.js';
 
 function App() {
 
@@ -28,24 +29,31 @@ function App() {
   return (
      <div>
         {/* тег создает разметку главного меню */}
-        {clonTypeOfRegim && 
-        <MenuWork 
-            clonWorkArray = {clonWorkArray}
-            setWorkArray = {setWorkArray}
-            clonInputTextPozition = {clonInputTextPozition}
-            setInputTextPozition = {setInputTextPozition}
-            setTypeOfRegim = {setTypeOfRegim}
+        {clonTypeOfRegim && // если clonTypeOfRegim == true то показать
+            <MenuWork 
+                clonWorkArray         = {clonWorkArray}
+                setWorkArray          = {setWorkArray}
+                clonInputTextPozition = {clonInputTextPozition}
+                setInputTextPozition  = {setInputTextPozition}
+                setTypeOfRegim        = {setTypeOfRegim}
         />}
 
         {/* тег работает с локальным хранилищем */}
-        {clonTypeOfRegim && 
-        <OutputPoleBook 
-            info=''
-            clonWorkArray = {clonWorkArray}
-            setWorkArray = {setWorkArray}
-         />
+        {clonTypeOfRegim && // если clonTypeOfRegim == true то показать
+            <OutputPoleBook 
+                info=''
+                clonWorkArray = {clonWorkArray}
+                setWorkArray  = {setWorkArray}
+             />
         }
-        
+
+        {/* тег работает с настройками */}
+        {!clonTypeOfRegim && // если clonTypeOfRegim == false то показать
+            <Settings 
+                setTypeOfRegim  = {setTypeOfRegim}
+            />
+        }      
+
      </div>
   );
 }

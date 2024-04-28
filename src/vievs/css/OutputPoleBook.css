@@ -3,6 +3,14 @@
     width: 100%;
     border: 1px solid black;
     border-radius: 10px;
+    margin-top: 5px;
+}
+
+.ul-div:nth-child(2n) {
+    background-color: aqua;
+}
+.ul-div:nth-child(2n+1) {
+    background-color: rgb(115, 176, 156);
 }
 
 .poleinfo-div--button {
@@ -11,6 +19,7 @@
     height: 1em;
     margin-right: 1em;
     line-height: 1em;
+    
 }
 
 .poleinfo--button {
