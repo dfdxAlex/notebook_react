@@ -57,6 +57,7 @@ function App() {
             <Settings 
                 setTypeOfRegim  = {setTypeOfRegim}
                 clonLang = {clonLang}
+                setLang = {setLang}
             />
         }      
 

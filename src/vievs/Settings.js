@@ -9,6 +9,7 @@ function Settings(props)
                <select 
                    className='select-lang' 
                    defaultValue={props.clonLang}
+                   onChange={(event) => {props.setLang(event.target.value)}}
                >
                    <option value='en'>Английский</option>;
                    <option value='pl'>Польский</option>;
