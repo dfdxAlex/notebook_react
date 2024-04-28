@@ -56,6 +56,7 @@ function App() {
         {!clonTypeOfRegim && // если clonTypeOfRegim == false то показать
             <Settings 
                 setTypeOfRegim  = {setTypeOfRegim}
+                clonLang = {clonLang}
             />
         }      
 
