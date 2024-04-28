@@ -7,10 +7,10 @@
 }
 
 .ul-div:nth-child(2n) {
-    background-color: aqua;
+    background-color: rgba(125, 191, 191, 0.692);
 }
 .ul-div:nth-child(2n+1) {
-    background-color: rgb(115, 176, 156);
+    background-color: rgba(118, 186, 163, 0.553);
 }
 
 .poleinfo-div--button {
