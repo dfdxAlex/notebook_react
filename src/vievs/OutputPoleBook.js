@@ -5,8 +5,8 @@ import './css/OutputPoleBook.css';
 
 function OutputPoleBook(props)
 {
-    let clonWorkArray = props.clonWorkArray;
-    const setWorkArray = props.setWorkArray;
+    let clonWorkArray = props.props.clonWorkArray;
+    const setWorkArray = props.props.setWorkArray;
 
     return <div>
                <ul>
@@ -25,15 +25,13 @@ function OutputPoleBook(props)
                                            X
                                        </button>
                                    </div>           
-
-                                   <div className="poleinfo-div--li">
-                                       <li className='poleinfo-li'>
+                                       <li className='poleinfo-div--li poleinfo-li'>
                                             {item[0]}
                                        </li>
-                                   </div>           
                                </div>
                                )
                         }
+                        return null;
                    })}
                </ul>
            </div>;

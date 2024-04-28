@@ -13,6 +13,7 @@ function App() {
 
   let workArray = initArray();
 
+  //состояние контролирует главный массив с информацией
   //состояние передается в транзитный компонент WorkWithlocalStorage
   //состояние передается в функцию OutputPoleBook
   //состояние передается в функцию MenuWork
@@ -20,10 +21,12 @@ function App() {
 
   return (
      <div>
+        {/* тег создает разметку главного меню */}
         <MenuWork 
             clonWorkArray = {clonWorkArray}
             setWorkArray = {setWorkArray}
         />
+        {/* тег работает с локальным хранилищем */}
         <WorkWithlocalStorage 
             info=''
             clonWorkArray = {clonWorkArray}

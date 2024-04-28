@@ -12,15 +12,16 @@ function WorkWithlocalStorage(props)
 {
 
     // переменные состояния, проходят транзитом в OutputPoleBook
-    let clonWorkArray = props.clonWorkArray;
-    let setWorkArray = props.setWorkArray;
+    // let clonWorkArray = props.clonWorkArray;
+    // let setWorkArray = props.setWorkArray;
 
     // saveString(props);
     // console.log(props);
 
     return <OutputPoleBook 
-               clonWorkArray={clonWorkArray}
-               setWorkArray={setWorkArray}
+            //    clonWorkArray={clonWorkArray}
+            //    setWorkArray={setWorkArray}
+            props = {props}
            />
 }
 
