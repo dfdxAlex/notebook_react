@@ -21,7 +21,10 @@ function Settings(props)
             <button 
                 type="button"
                 className='button-setting'
-                onClick={() => {props.setTypeOfRegim(true)}}
+                onClick={() => {
+                                 props.setTypeOfRegim(true);
+                                 localStorage.setItem('lang',props.clonLang);
+                                }}
             >
                 Сохранить
             </button>
