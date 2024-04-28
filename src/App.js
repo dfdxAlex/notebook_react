@@ -10,6 +10,7 @@ function App() {
 
   let workArray = initArray();
   let inputTextPozition = '';
+  let typeOfRegim = true;
 
   //состояние контролирует главный массив с информацией
   //состояние передается в транзитный компонент WorkWithlocalStorage
@@ -20,21 +21,31 @@ function App() {
   //Содержимое поля ввода добавление позиции
   const [clonInputTextPozition, setInputTextPozition] = useState(inputTextPozition);
 
+  //Состояние определяет показывать ли рабочее поле
+  //или поле с настройками
+  const [clonTypeOfRegim, setTypeOfRegim] = useState(typeOfRegim);
+
   return (
      <div>
         {/* тег создает разметку главного меню */}
+        {clonTypeOfRegim && 
         <MenuWork 
             clonWorkArray = {clonWorkArray}
             setWorkArray = {setWorkArray}
             clonInputTextPozition = {clonInputTextPozition}
             setInputTextPozition = {setInputTextPozition}
-        />
+            setTypeOfRegim = {setTypeOfRegim}
+        />}
+
         {/* тег работает с локальным хранилищем */}
+        {clonTypeOfRegim && 
         <OutputPoleBook 
             info=''
             clonWorkArray = {clonWorkArray}
             setWorkArray = {setWorkArray}
          />
+        }
+        
      </div>
   );
 }

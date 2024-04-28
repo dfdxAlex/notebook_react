@@ -25,7 +25,9 @@ function MenuWork(props)
                     Добавить
                 </button>
             </div>
-            <Hamburger />
+            <Hamburger 
+                setTypeOfRegim = {props.setTypeOfRegim}
+            />
             <br />
         </form>
     </div>);
