@@ -4,6 +4,7 @@ import MenuWork from './vievs/MenuWork.js';
 import React, { useState } from 'react';
 import {initArray} from "./model/WorkDataArray.js";
 import getLang from './controller/getLang.js';
+import {translateArray} from './model/translateArray.js';
 
 import OutputPoleBook from './vievs/OutputPoleBook.js';
 import Settings from './vievs/Settings.js';
@@ -31,6 +32,9 @@ function App() {
   //Состояние определяет язык интерфейса
   const [clonLang, setLang] = useState(lang);
 
+  //Состояние хранит массив с переводами
+  const [clonTranslateArray, setClonTranslateArray] = useState(translateArray);
+
   return (
      <div>
         {/* тег создает разметку главного меню */}
@@ -55,9 +59,11 @@ function App() {
         {/* тег работает с настройками */}
         {!clonTypeOfRegim && // если clonTypeOfRegim == false то показать
             <Settings 
-                setTypeOfRegim  = {setTypeOfRegim}
-                clonLang = {clonLang}
-                setLang = {setLang}
+                setTypeOfRegim        = {setTypeOfRegim}
+                clonLang              = {clonLang}
+                setLang               = {setLang}
+                clonTranslateArray    = {clonTranslateArray}
+                setClonTranslateArray = {setClonTranslateArray}
             />
         }      
 

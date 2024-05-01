@@ -1,12 +1,12 @@
 .button-setting {
-    display: block;
-    max-width: 300px;
+    display: inline;
+    width: 7em;
     height: 1.4em;
     background-color: green;
     color:antiquewhite;
     font-size: 1em;
     border-radius: 10%;
-    
+    margin-left: 10px;
 }
 
 .fieldset-lang {
@@ -30,3 +30,5 @@
     font-size: 1em;
     
 }
+
+
