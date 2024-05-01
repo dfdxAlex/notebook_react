@@ -4,7 +4,7 @@ import getLang from '../controller/getLang.js';
 // Функция управляет режимом настроек
 function Settings(props)
 {
-    let TrArr = props.clonTranslateArray;
+    // let TrArr = props.clonTranslateArray;
     return (
         <div>
             <fieldset className='fieldset-lang'>
@@ -28,15 +28,15 @@ function Settings(props)
                 className='button-setting'
                 onClick={() => {
                                  localStorage.setItem('lang',props.clonLang);
-                                 const arr = TrArr;
+                                 const arr = props.clonTranslateArray;
                                  arr[0]['lang'] = props.clonLang;
                                  props.setClonTranslateArray([...arr]);
                                 }}
             >
                 {/* Кнопка Сохранить */}
-                {TrArr[1][getLang()]}
+                {props.clonTranslateArray[1][getLang()]}
             </button>
-            
+
             <button 
                 type="button"
                 className='button-setting'
@@ -45,7 +45,7 @@ function Settings(props)
                                 }}
             >
                 {/* Кнопка Выйти из настроек */}
-                {props.clonTranslateArray[1][getLang()]}
+                {props.clonTranslateArray[2][getLang()]}
             </button>
         </div>
     );
