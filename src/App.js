@@ -45,6 +45,7 @@ function App() {
                 clonInputTextPozition = {clonInputTextPozition}
                 setInputTextPozition  = {setInputTextPozition}
                 setTypeOfRegim        = {setTypeOfRegim}
+                clonTranslateArray    = {clonTranslateArray}
         />}
 
         {/* тег работает с локальным хранилищем */}

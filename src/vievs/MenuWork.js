@@ -2,9 +2,16 @@ import './css/MenuWork.css';
 
 import Hamburger from './HamburgerMenu';
 import hundlerAddPosition from '../controller/hundlerAddPosition.js';
+import getLang from '../controller/getLang.js';
 
 function MenuWork(props)
 {
+    // функция-обёртка помогает сократить дублирование кода
+    function translateHelp(el)
+    {
+        return props.clonTranslateArray[el][getLang()];
+    }
+
     return (<div>
         <form className="grid-container">
             <div className="text-container">
@@ -22,7 +29,8 @@ function MenuWork(props)
                     type="button"
                     onClick={() => {hundlerAddPosition(props)}}
                 >
-                    Добавить
+                    {/* Кнопка Добавить */}
+                    {translateHelp(8)}
                 </button>
             </div>
             <Hamburger 

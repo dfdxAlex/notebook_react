@@ -4,11 +4,17 @@ import getLang from '../controller/getLang.js';
 // Функция управляет режимом настроек
 function Settings(props)
 {
-    // let TrArr = props.clonTranslateArray;
+
+    // функция-обёртка помогает сократить дублирование кода
+    function translateHelp(el)
+    {
+        return props.clonTranslateArray[el][getLang()];
+    }
+
     return (
         <div>
             <fieldset className='fieldset-lang'>
-               <legend className='legend-lang'>Выбор языка</legend>
+               <legend className='legend-lang'>{translateHelp(7)}</legend>
                <select 
                    className='select-lang' 
                    defaultValue={props.clonLang}
@@ -16,10 +22,10 @@ function Settings(props)
                         props.setLang(event.target.value);
                     }}
                >
-                   <option value='en'>Английский</option>;
-                   <option value='pl'>Польский</option>;
-                   <option value='ua'>Украинский</option>;
-                   <option value='ru'>Русский</option>;
+                   <option value='en'>{translateHelp(3)}</option>;
+                   <option value='pl'>{translateHelp(4)}</option>;
+                   <option value='ua'>{translateHelp(5)}</option>;
+                   <option value='ru'>{translateHelp(6)}</option>;
                </select>
             </fieldset>
 
@@ -34,7 +40,7 @@ function Settings(props)
                                 }}
             >
                 {/* Кнопка Сохранить */}
-                {props.clonTranslateArray[1][getLang()]}
+                {translateHelp(1)}
             </button>
 
             <button 
@@ -45,7 +51,7 @@ function Settings(props)
                                 }}
             >
                 {/* Кнопка Выйти из настроек */}
-                {props.clonTranslateArray[2][getLang()]}
+                {translateHelp(2)}
             </button>
         </div>
     );
