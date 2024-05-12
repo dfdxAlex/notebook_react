@@ -1,20 +1,19 @@
 import './css/Settings.css';
-import getLang from '../controller/getLang.js';
+import TranslationByWord from './TranslationByWord.js';
 
 // Функция управляет режимом настроек
 function Settings(props)
 {
 
-    // функция-обёртка помогает сократить дублирование кода
-    function translateHelp(el)
-    {
-        return props.clonTranslateArray[el][getLang()];
-    }
-
     return (
         <div>
             <fieldset className='fieldset-lang'>
-               <legend className='legend-lang'>{translateHelp(7)}</legend>
+               <legend className='legend-lang'>
+                   <TranslationByWord 
+                       clonTranslateArray = {props.clonTranslateArray}
+                       str = 'Выбор языка'
+                   />
+               </legend> 
                <select 
                    className='select-lang' 
                    defaultValue={props.clonLang}
@@ -22,10 +21,30 @@ function Settings(props)
                         props.setLang(event.target.value);
                     }}
                >
-                   <option value='en'>{translateHelp(3)}</option>;
-                   <option value='pl'>{translateHelp(4)}</option>;
-                   <option value='ua'>{translateHelp(5)}</option>;
-                   <option value='ru'>{translateHelp(6)}</option>;
+                   <option value='en'>
+                        <TranslationByWord 
+                            clonTranslateArray = {props.clonTranslateArray}
+                            str = 'Английский'
+                        />
+                   </option>;
+                   <option value='pl'>
+                        <TranslationByWord 
+                            clonTranslateArray = {props.clonTranslateArray}
+                            str = 'Польский'
+                        />
+                   </option>;
+                   <option value='ua'>
+                        <TranslationByWord 
+                            clonTranslateArray = {props.clonTranslateArray}
+                            str = 'Украинский'
+                        />
+                   </option>;
+                   <option value='ru'>
+                        <TranslationByWord 
+                            clonTranslateArray = {props.clonTranslateArray}
+                            str = 'Русский'
+                        /> 
+                   </option>;
                </select>
             </fieldset>
 
@@ -39,8 +58,10 @@ function Settings(props)
                                  props.setClonTranslateArray([...arr]);
                                 }}
             >
-                {/* Кнопка Сохранить */}
-                {translateHelp(1)}
+                <TranslationByWord 
+                    clonTranslateArray = {props.clonTranslateArray}
+                    str = 'Сохранить'
+                /> 
             </button>
 
             <button 
@@ -50,8 +71,10 @@ function Settings(props)
                                  props.setTypeOfRegim(true);
                                 }}
             >
-                {/* Кнопка Выйти из настроек */}
-                {translateHelp(2)}
+                <TranslationByWord 
+                    clonTranslateArray = {props.clonTranslateArray}
+                    str = 'Выйти'
+                /> 
             </button>
         </div>
     );
